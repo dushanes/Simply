@@ -1,0 +1,10 @@
+.list-item-container{
+    display: block;
+    padding-left: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.list-item-container:nth-child(even){
+    background-color: rgba(75, 6, 14, 0.3);
+}

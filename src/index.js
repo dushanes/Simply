@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './components/css/index.css';
+import SimplyApp from './SimplyApp';
 import * as serviceWorker from './serviceWorker';
+require('dotenv').config();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SimplyApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

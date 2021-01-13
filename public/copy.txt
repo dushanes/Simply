@@ -1,0 +1,27 @@
+
+    <script lang="JavaScript">
+      const textToSpeech = require('text-to-speech-js');
+      const fs = require('fs');
+      const util = require('util');
+
+      async function speech(text){
+          textToSpeech.talk(text, true)
+      }
+
+      function dispatchSpeech(){
+        switch(){
+
+        }
+      }
+
+      const elem = document.getElementById('1');
+      elem.addEventListener("keypress", dispatchSpeech)
+
+    </script>
+**Must be asynchronous function
+
+1. get the container of all p elements in question, type div variable
+2. get all p elements using getElementsByTagName, ex: ctrl.getElementsByTagName('p')[0].innerHTML;
+3. loop through p element to grab innerHTML
+4. set up on keypress using addEventListener for each p element
+5. keypress event will take p elem innerHTML and convert using speech to text lib, must store speech

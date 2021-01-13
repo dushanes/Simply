@@ -1,0 +1,37 @@
+header.ant-layout-header.app-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    background-color: #4B060E;
+    font-size: calc(8px + 2vmin);
+}
+
+div.ant-radio-group {
+    float: right;
+    margin-right: 150px;
+}
+
+.ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
+    background: #45050C;
+    border-color: #1890ff;
+}
+
+
+#app-title {
+    color: white;
+    display: inline-block;
+    line-height: 48px;
+}
+
+.nav-container {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+  }
+
+.header-menu {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
