@@ -11,7 +11,7 @@ export default class Directions extends React.Component {
     render(){
         if(this.props.instructions) {
             var stepItems = this.props.instructions.map((step) => (
-                <div className='list-item-container' id={step.number}  tabindex="0">
+                <div key={step.number} className='list-item-container' id={step.number}  tabIndex="0">
                     <h3>Step {step.number}:</h3>
                     <p>{step.step}</p>
                 </div>

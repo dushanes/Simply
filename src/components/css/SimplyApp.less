@@ -1,27 +1,23 @@
-.app {
+html, body, #root, .app {
   height: 100%;
+  overflow: auto;
 }
 
 h1, h2 {
-  font-family: 'Playfair Display', serif;
-  color: #720E07;
+  font-family: 'Playfair Display', sans-serif;
+  color: #4B060E;
 }
 
-h3, p {
+h3, h4, h5, p {
   font-family: 'Open Sans', sans-serif;
 }
 
 .layout-body {
   height: 100%;
   display: inline-block;
-  orientation: landscape;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main.ant-layout-content.content{
+  height: 100%;
+  background-color: #f8f8ff;
 }

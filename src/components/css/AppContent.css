@@ -1,61 +1,10 @@
 div.content-container{
-    background-color: #FCF7ED;
-    display: block;
-    width: 85%;
+    position: relative !important;
+    background-color: #F8F8FF;
+    display: flex;
+    width: 70%;
     min-height: fit-content;
-    margin: 48px auto 120px;
-    border-radius: 25px;
-    box-shadow: 8px 8px 4px gray;
-}
-
-main.ant-layout-content.content{
-    height: 100%;    
-    background-color: #f8f8ff;
-
-}
-
-.grid-root{
-    padding-bottom: 24px;
-}
-
-h2{
-    padding: 8px;
-    margin: 16px;
-    font-size: 1.9em;
-}
-
-img {
-    border-radius: 25px;
-}
-
-.title-header{
-    color: #720E07;
-}
-
-#title-food{
-    font-size: 2.35em;
-    margin: 16px;
-    margin-left: 32px;
-}
-
-h2.food-name{
-    padding: 8px;
-    margin: 16px 0px 8px 48px;
-    font-size: 2.25em;
-    
-}
-
-.desc-source {
-    width: 75%;
-    padding: 8px;
-    line-height: 30px;
     margin: auto;
-    margin-bottom: 30px;
-}
-
-.food-img-container {
-    text-align: center;
-    margin: 12px;
-    margin-top: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
+    height: auto;
 }

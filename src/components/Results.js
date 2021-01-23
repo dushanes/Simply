@@ -1,43 +1,39 @@
-import React, { useState, useEffect } from 'react'
-import {Card} from 'antd'
-import 'antd/dist/antd.less';
+import React from 'react'
 import './css/Results.css'
-import {useSpring, useTransition, animated, config} from 'react-spring'
-import {Transition} from 'react-spring/renderprops'
+import { List } from 'antd';
+import { ResultCard } from './ResultCard';
 
-
-export function Results(props){
-    const [loading, setLoading] = useState(props)
-    const [results, setResults] = useState(props)
-
-    const cardStyles = useSpring({opacity: loading ? 1 : 0})
-
-    useEffect(() => {
-        setLoading(props);
-        setResults(props);
-      }, [props]);
-
+export const Results = ({results, totalResults, onSelectChange, onPageChange}) => {
     return (
-        <div>
-            {!loading && props.results.map((result) => (
-                <Transition
-                from={{ opacity: 0 }}
-                enter={{ opacity: 1 }}
-                leave={{ opacity: 0 }}>
-                {
-                    <Card className="card" 
-                    hoverable={true} 
-                    size='small'
-                    cover={<img id='card-img'src={result.image}/>} 
-                    onClick={() => props.onSelectChange(result.id)}
-                    loading={loading}>
-                        <div className="card-body">
-                            <h4 className="food-title">{result.title}</h4>
-                        </div>
-                    </Card>
-                }
-                </Transition>
-            ))}
+        <div className='content-container' >
+            <h1 className='title-header' style={{fontSize: 32}}>Search Results</h1>
+            <h5>Found {totalResults} total results...</h5>
+            <List
+                grid={{
+                gutter: [16, 16],
+                xs: 1,
+                sm: 2,
+                md: 4,
+                lg: 4,
+                xl: 6,
+                xxl: 6,
+                }}
+                style={{position: "relative"}}
+                dataSource={results}
+                pagination={{
+                    onChange: (page, pageSize) => onPageChange(page, pageSize), 
+                    showTotal: total => `Total of ${total} items`,
+                    defaultPageSize: 20, 
+                    defaultCurrent: 1,  
+                    total: totalResults, 
+                    hideOnSinglePage: true}}
+                renderItem={item => (
+                    
+                <List.Item style={{height: '220px !important', position: "relative", zIndex: 1}}>
+                    <ResultCard result={item} onSelectChange={onSelectChange}/>
+                </List.Item>
+                )}
+            />
         </div>
     )
 }

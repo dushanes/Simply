@@ -5,18 +5,6 @@
     float: left;
 }
 
-aside.ant-layout-sider{
-    background-color:  #F8EDD8;
-
-}
-
-button.ant-btn{
-    background-color: #45050C;
-    border: #8B6220;
-}
-
-#search-bar {
-    width: 300px;
-    margin: auto;
-    padding: 8px;
+.search-results{
+    height: 100%;
 }
