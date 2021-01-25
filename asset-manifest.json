@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Simply/static/css/main.bb88a446.chunk.css",
+    "main.js": "/Simply/static/js/main.6b8642ba.chunk.js",
+    "main.js.map": "/Simply/static/js/main.6b8642ba.chunk.js.map",
+    "runtime-main.js": "/Simply/static/js/runtime-main.752057cd.js",
+    "runtime-main.js.map": "/Simply/static/js/runtime-main.752057cd.js.map",
+    "static/css/2.67ee0486.chunk.css": "/Simply/static/css/2.67ee0486.chunk.css",
+    "static/js/2.abf16015.chunk.js": "/Simply/static/js/2.abf16015.chunk.js",
+    "static/js/2.abf16015.chunk.js.map": "/Simply/static/js/2.abf16015.chunk.js.map",
+    "index.html": "/Simply/index.html",
+    "static/css/2.67ee0486.chunk.css.map": "/Simply/static/css/2.67ee0486.chunk.css.map",
+    "static/css/main.bb88a446.chunk.css.map": "/Simply/static/css/main.bb88a446.chunk.css.map",
+    "static/js/2.abf16015.chunk.js.LICENSE.txt": "/Simply/static/js/2.abf16015.chunk.js.LICENSE.txt",
+    "static/media/appetizer.ec092b60.jpg": "/Simply/static/media/appetizer.ec092b60.jpg",
+    "static/media/breakfast.ad7d4ec6.jpg": "/Simply/static/media/breakfast.ad7d4ec6.jpg",
+    "static/media/chicken.70e0fdc1.jpg": "/Simply/static/media/chicken.70e0fdc1.jpg",
+    "static/media/lunch.0880376d.jpg": "/Simply/static/media/lunch.0880376d.jpg",
+    "static/media/salad.bcb788c6.jpg": "/Simply/static/media/salad.bcb788c6.jpg",
+    "static/media/soup.3e1d0816.jpg": "/Simply/static/media/soup.3e1d0816.jpg",
+    "static/media/steak.47dc7210.jpg": "/Simply/static/media/steak.47dc7210.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.752057cd.js",
+    "static/css/2.67ee0486.chunk.css",
+    "static/js/2.abf16015.chunk.js",
+    "static/css/main.bb88a446.chunk.css",
+    "static/js/main.6b8642ba.chunk.js"
+  ]
+}
