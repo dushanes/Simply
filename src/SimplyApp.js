@@ -37,7 +37,7 @@ function SimplyApp(){
     }
 
     //Get recipie information and display in app content
-    const handleChangeSelected =(id) => {
+    function handleChangeSelected(id){
         console.log('Menu Log: Recipie selected, id' + {id})
         setRecipeID(id)
         getRecipe(id)
@@ -63,7 +63,7 @@ function SimplyApp(){
     }
 
     const getPopularData = (input, type, offset) => {
-        fetch(encodeSearch(input, type, offset))
+        fetch(encodeSearch(input, type, offset, 6))
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -79,7 +79,7 @@ function SimplyApp(){
 
     
     const getExploreData = (input, type, offset) => {
-        fetch(encodeSearch(input, type, offset, "random"))
+        fetch(encodeSearch(input, type, offset, 10,"random"))
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -105,17 +105,19 @@ function SimplyApp(){
             })
             .then((data) => {
                 setResultsState(data.results)
+                setTotalState(data.totalResults)
             }).catch((error) => {
                 console.log(error)
             })
     }
 
-    const encodeSearch = (_query, _type, _offset, _sort) =>{
+    const encodeSearch = (_query, _type, _offset, _num, _sort) =>{
         let offset = _offset || ""
         let type = _type || ""
         let query = _query || ""
+        let num = _num || "100"
         let sort = _sort || "popularity"
-        let request = "https://api.spoonacular.com/recipes/complexSearch?apiKey=93b09acd5a44410d87094660a3bfb7ff&sort="+ sort +"&number=100&instructionsRequired=true&query=" + query +"&offset=" + offset +"&type=" + type
+        let request = "https://api.spoonacular.com/recipes/complexSearch?apiKey=93b09acd5a44410d87094660a3bfb7ff&addRecipeNutrition=true&sort="+ sort +"&number=" + num + "&instructionsRequired=true&query=" + query +"&offset=" + offset +"&type=" + type
         console.log(request)
         return request
     }
@@ -186,6 +188,7 @@ function SimplyApp(){
                                 getPopularData={getPopularData}
                                 exploreData={exploreData}
                                 getExploreData={getExploreData}
+                                onSelectChange={handleChangeSelected}
                                 />
                     }
                 </Content>

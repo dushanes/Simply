@@ -9,7 +9,6 @@ module.exports = {
             lessOptions: {
               modifyVars: { 
                   //'radio-button-checked-bg': '#FCF7ED',
-                  'primary-color': '#4B060E',
                   'radio-dot-color': '#BB9457',
                   'radio-border-width': '0px',
                   'radio-button-hover-color': '#BB9457-5',
@@ -20,6 +19,9 @@ module.exports = {
                   'layout-body-background': ' #f8f8ff',
                   'layout-footer-background': ' #4B060E',
                   'input-hover-border-color': '#BB9457',
+                  'divider-color': '#BB9457',
+                  'border-color-base': '#BB9457',
+                  'card-radius': '3%'
                 },
               javascriptEnabled: true,
             },

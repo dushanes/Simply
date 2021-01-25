@@ -1,12 +1,13 @@
 header.ant-layout-header.app-header {
     display: flex;
     position: relative;
+    align-items: center;
     flex-direction: row;
     width: 100%;
     padding: 0;
     z-index: 2;
     background-color: #4B060E;
-    font-size: calc(8px + 2vmin);
+    font-size: 1.5em;
 }
 
 div.ant-radio-group {
@@ -22,6 +23,8 @@ div.ant-radio-group {
 }
 
 .app-title {
+    display: inherit;
+    align-items: center;
     margin-left: 100px;
     color: white;
     line-height: 48px;
@@ -29,6 +32,6 @@ div.ant-radio-group {
 
 .search-bar {
     margin-left: 40px;
-    width: 30%;
+    width: 30% !important;
     padding: 16px;
 }
