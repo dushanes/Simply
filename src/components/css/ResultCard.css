@@ -1,0 +1,16 @@
+.text-ellips{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    margin-bottom: 12px;
+    line-height: 1.8em;
+    font-size: .90em;
+  }
+
+.stat-text{
+    float: right;
+    margin-right: 8px;
+}

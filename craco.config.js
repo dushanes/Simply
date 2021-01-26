@@ -20,7 +20,7 @@ module.exports = {
                   'layout-footer-background': ' #4B060E',
                   'input-hover-border-color': '#BB9457',
                   'divider-color': '#BB9457',
-                  'border-color-base': '#BB9457',
+                  'border-color-base': '#4B060E',
                   'card-radius': '3%'
                 },
               javascriptEnabled: true,
