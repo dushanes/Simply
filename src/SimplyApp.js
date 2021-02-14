@@ -28,7 +28,7 @@ function SimplyApp(){
             while(offset > resultsState.length){
                 searchRecipies(searchQuery.query, searchQuery.type,  resultsState.length)
             }
-            searchRecipies(searchQuery, searchQuery.type, offset)
+            searchRecipies(searchQuery.query, searchQuery.type, offset)
         }  
     }
     //Switch between US measurement system and Metric measurement system
@@ -44,10 +44,12 @@ function SimplyApp(){
     }
 
     //Search for recipies using a query
-    const searchRecipies = (input, type, offset) => {
+    const searchRecipies = (input, type, offset, num, sort) => {
         setSearching(true)
         setSearchQuery({query:input, type:type})
-        fetch(encodeSearch(input, type, offset))
+        setExploreData([])
+
+        fetch(encodeSearch(input, type, offset, num, sort))
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -111,14 +113,13 @@ function SimplyApp(){
             })
     }
 
-    const encodeSearch = (_query, _type, _offset, _num, _sort) =>{
-        let offset = _offset || ""
-        let type = _type || ""
-        let query = _query || ""
-        let num = _num || "100"
-        let sort = _sort || "popularity"
-        let request = "https://api.spoonacular.com/recipes/complexSearch?apiKey=93b09acd5a44410d87094660a3bfb7ff&addRecipeNutrition=true&sort="+ sort +"&number=" + num + "&instructionsRequired=true&query=" + query +"&offset=" + offset +"&type=" + type
-        console.log(request)
+    const encodeSearch = (query = "", type="", offset="", num="100", sort="popularity") =>{
+        let request = "https://api.spoonacular.com/recipes/complexSearch?apiKey=93b09acd5a44410d87094660a3bfb7ff&addRecipeNutrition=true&sort="
+            + sort +"&number=" 
+            + num + "&instructionsRequired=true&query=" 
+            + query +"&offset=" 
+            + offset +"&type=" 
+            + type
         return request
     }
 
@@ -137,8 +138,8 @@ function SimplyApp(){
             }else
             return res.json()
         }).then((data) => {
-            var instructions = data.analyzedInstructions 
-            var ingred = data.extendedIngredients
+            let instructions = data.analyzedInstructions 
+            let ingred = data.extendedIngredients
             instructions = instructions[0]
             instructions = instructions.steps
 
@@ -167,6 +168,7 @@ function SimplyApp(){
                 <BarList
                     getType={getType}
                     onSearch={searchRecipies}
+                    setResultsState={setResultsState}
                     />
 
                 <Content className='content'>
@@ -188,6 +190,7 @@ function SimplyApp(){
                                 getPopularData={getPopularData}
                                 exploreData={exploreData}
                                 getExploreData={getExploreData}
+                                onSearch={searchRecipies}
                                 onSelectChange={handleChangeSelected}
                                 />
                     }

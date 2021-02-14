@@ -5,6 +5,7 @@ import './css/ResultCard.css'
 import {
     FieldTimeOutlined
   } from '@ant-design/icons';
+  
 export const ResultCard = ({result, onSelectChange}) => {
     function createMarkup() {
         const md = new Remarkable();
@@ -23,8 +24,7 @@ export const ResultCard = ({result, onSelectChange}) => {
     return(
         <Card className="card" 
         hoverable={true}
-        title={result.title}
-        headStyle={{wordWrap: true}}
+        title={<span style={{whiteSpace: 'pre-wrap'}}>{result.title}</span>}
         key={result.id}
         size='small'
         cover={<img src={result.image} alt={""}/>} 

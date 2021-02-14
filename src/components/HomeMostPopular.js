@@ -2,21 +2,14 @@ import React, { useEffect } from 'react'
 import { List, Divider, Button } from 'antd'
 import { ResultCard } from './ResultCard'
 import './css/HomeMostPopular.css'
-import breakfast from './img/breakfast.jpg'
 
-export const HomeMostPopular = ({data, getData, onSelectChange}) => {
-    let test = [
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-    ]
+export const HomeMostPopular = ({data, getData, onSelectChange, onSearch}) => {
+
     useEffect(() => {
         getData()
         console.log('mounted');  
       }, []);
+      
     return (
         <div className='home-most-popular' >
             <h1 className='title-header' style={{fontSize: 28}}>Most Popular</h1>
@@ -31,7 +24,6 @@ export const HomeMostPopular = ({data, getData, onSelectChange}) => {
                 xl: 2,
                 xxl: 2,
                 }}
-                style={{position: "relative"}}
                 pagination={{defaultPageSize: 4, hideOnSinglePage: true}}
                 dataSource={data}
                 renderItem={item => (
@@ -41,7 +33,7 @@ export const HomeMostPopular = ({data, getData, onSelectChange}) => {
                 </List.Item>
                 )}
             />
-            <Button style={{float: 'right', marginRight: "15px", marginTop: '16px'}} type="primary">See More</Button>
+            <Button onClick={() => onSearch()} style={{float: 'right', marginRight: "15px", marginTop: '16px'}} type="primary">See More</Button>
         </div>
 
     )

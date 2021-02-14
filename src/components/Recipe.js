@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/Recipe.css'
-import {Row, Col} from 'antd'
+import {Row, Col, Divider} from 'antd'
 import Directions from './Directions'
 import Ingredients from './Ingredients'
 import {Remarkable} from 'remarkable';
@@ -37,10 +37,12 @@ export const Recipe = ({recipe, useMetric, ingred, instructions}) => {
             <Row justify='center' gutter='2'>
                 <Col span={8}>
                     <h2 className='title-header'>Ingredients</h2>
+                    <Divider/>
                     <Ingredients items={ingred} useMetric={useMetric}/>
                 </Col>
                 <Col span={8} offset={2}>
                     <h2 className='title-header'>Directions</h2>
+                    <Divider/>
                     <Directions instructions={instructions}/>
                 </Col>
             </Row>

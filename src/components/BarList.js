@@ -9,7 +9,7 @@ import steak from "./img/steak.jpg"
 import salad from "./img/salad.jpg"
 import soup from "./img/soup.jpg"
 
-export const BarList = ({getType, onSearch}) => {
+export const BarList = ({getType, onSearch, setResultsState}) => {
     const data = [
         {title: "Appetizer Recipies", url: appetizer, type:"appetizer"},
         {title: "Breakfast and Brunch Recipies", url: breakfast, type:"breakfast"},
@@ -25,13 +25,13 @@ export const BarList = ({getType, onSearch}) => {
                 const action = type ? getType : onSearch
                 if(type){
                     return (
-                    <div style={{cursor: "pointer" }} onClick={() => action("", type)}>
+                    <div style={{cursor: "pointer" }} onClick={() => action("", type)} key={type}>
                         <CircleImage title={title} url={url}/>
                     </div>
                     )
                 }else{
                     return (
-                    <div style={{cursor: "pointer" }} onClick={() => action(query)}>
+                    <div style={{cursor: "pointer" }} onClick={() => action(query)} key={query}>
                         <CircleImage title={title} url={url}/>
                     </div>
                     )

@@ -2,20 +2,8 @@ import React, { useEffect } from 'react'
 import { List, Divider, Button } from 'antd'
 import { ResultCard } from './ResultCard'
 import './css/HomeExplore.css'
-import breakfast from './img/breakfast.jpg'
 
-export const HomeExplore = ({data, getData, onSelectChange}) => {
-    let test = [
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-        {id:"0001", title:"Apple Caramel encrusted banana split ice cream potato", image: breakfast},
-    ]
+export const HomeExplore = ({data, getData, onSearch, onSelectChange}) => {
 
     useEffect(() => {
         getData()
@@ -46,7 +34,7 @@ export const HomeExplore = ({data, getData, onSelectChange}) => {
                 </List.Item>
                 )}
             />
-            <Button style={{float: 'right', marginRight: "15px", marginTop: '16px'}} type="primary">See More</Button>
+            <Button onClick={() => onSearch("", "", 0, undefined,"random")} style={{float: 'right', marginRight: "15px", marginTop: '16px'}} type="primary">See More</Button>
         </div>
     )
 }
